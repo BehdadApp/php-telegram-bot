@@ -25,6 +25,4 @@ $string = json_decode(file_get_contents('php://input'));
     
         $res = file_get_contents($url);
 
-echo 'Mohammad';
-
 ?>
