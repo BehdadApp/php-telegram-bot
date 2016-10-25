@@ -12,8 +12,8 @@
 require __DIR__ . '/vendor/autoload.php';
 
 // Add you bot's API key and name
-$API_KEY = 'your_bot_api_key';
-$BOT_NAME = 'username_bot';
+$API_KEY = '282292401:AAE2ns2v0dHgEopS58BhllzKh1694mDGavs';
+$BOT_NAME = 'FAQPolBot';
 
 // Define a path for your custom commands
 //$commands_path = __DIR__ . '/Commands/';
