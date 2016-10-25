@@ -1,3 +1,4 @@
+<?php
 $string = json_decode(file_get_contents('php://input'));
     
     function objectToArray( $object )
@@ -24,3 +25,4 @@ $string = json_decode(file_get_contents('php://input'));
     
     
     $res = file_get_contents($url);
+>
