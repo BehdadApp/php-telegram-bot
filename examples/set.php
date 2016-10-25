@@ -4,7 +4,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 $API_KEY = '282292401:AAE2ns2v0dHgEopS58BhllzKh1694mDGavs';
 $BOT_NAME = 'FAQPolBot';
-$hook_url = 'https://faqpolbot.herokuapp.com/path/to/hook.php';
+$hook_url = 'https://faqpolbot.herokuapp.com/examples/hook.php';
 try {
     // Create Telegram API object
     $telegram = new Longman\TelegramBot\Telegram($API_KEY, $BOT_NAME);
