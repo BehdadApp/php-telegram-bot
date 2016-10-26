@@ -18,13 +18,7 @@ $string = json_decode(file_get_contents('php://input'));
     $user_id = $result['message']['from']['id'];
     $text = $result['message']['text'];
     $token = '282292401:AAE2ns2v0dHgEopS58BhllzKh1694mDGavs';
-    $text_reply = '*bold text*
-_italic text_
-[text](http://www.example.com/)
-`inline fixed-width code`
-```text
-pre-formatted fixed-width code block
-```';
+    $text_reply ='dddddddddddddddddddddddddddddddddddddd';
     
     $url = 'https://api.telegram.org/bot'.$token.'/sendMessage?parse_mode=Markdown?chat_id='.$user_id;
     $url .= '&text=' .$text_reply;
