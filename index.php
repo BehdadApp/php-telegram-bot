@@ -7,11 +7,13 @@ $BOT_NAME = 'ibnSinaBot';
 try {
     // Create Telegram API object
     $telegram = new Longman\TelegramBot\Telegram($API_KEY, $BOT_NAME);
-
-    // Enable MySQL
-    $telegram->enableMySQL($mysql_credentials);
+ 
     // Handle telegram webhook request
     $telegram->handle();
+    
+ 
+    
+    
 } catch (Longman\TelegramBot\Exception\TelegramException $e) {
     // log telegram errors
     echo $e;
