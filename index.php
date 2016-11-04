@@ -1,28 +1,18 @@
 <?php
-$string = json_decode(file_get_contents('php://input'));
-    
-    function objectToArray( $object )
-    {
-        if( !is_object( $object ) && !is_array( $object ) )
-        {
-            return $object;
-        }
-        if( is_object( $object ) )
-        {
-            $object = get_object_vars( $object );
-        }
-        return array_map( 'objectToArray', $object );
-    }
-    
-    $result = objectToArray($string);
-    $user_id = $result['message']['from']['id'];
-    $text = $result['message']['text'];
-    $token = '282292401:AAE2ns2v0dHgEopS58BhllzKh1694mDGavs';
-    $text_reply ='*bold text* _italic text_  [لینک](http://www.example.com/)  `inline fixed-width code`  ```text pre-formatted fixed-width code block```';     
+require __DIR__ . '/vendor/autoload.php';
 
-    $url = 'https://api.telegram.org/bot'.$token.'/sendMessage?parse_mode=markdown&chat_id='.$user_id;
-    $url .= '&text=' .$text_reply;
-    
-        $res = file_get_contents($url);
+$API_KEY = '258123864:AAGf0QayDyTslQ1-V5d3hb49nD3y0C1b424';
+$BOT_NAME = 'ibnSinaBot';
+ 
+try {
+    // Create Telegram API object
+    $telegram = new Longman\TelegramBot\Telegram($API_KEY, $BOT_NAME);
 
-?>
+    // Enable MySQL
+    $telegram->enableMySQL($mysql_credentials);
+    // Handle telegram webhook request
+    $telegram->handle();
+} catch (Longman\TelegramBot\Exception\TelegramException $e) {
+    // log telegram errors
+    echo $e;
+}
